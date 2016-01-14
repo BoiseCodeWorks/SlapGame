@@ -40,7 +40,7 @@ var Obj = function(option1, option2, option3){
 1. following the example below, add 2 more items.
 
 ```javascript
-var items{
+var items = {
 	shield:new Item("Shield",0.3,"This is an awesome shield!"),
 	...
 	...
