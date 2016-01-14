@@ -74,13 +74,13 @@ player items. In this case, we need to use an array, because it may be possible 
 
 ###Step 6 - REDUCE THE DAMAGE!... for real this time.
 - before you begin this step, try to solve the problem... without the help from a mentor. Remember math in javascript
-is the same as on paper. Order of operations matters: **5 - (5 * .3) =  3.5**
+is the same as on paper. Order of operations matters: **5 * .3 =  1.5**
 - stuck?
 - look at the hit function()
-- total damage done = damage - (damage * \[sum of all modifiers])
+- total damage done = damage * \[sum of all modifiers]
 - did you get it! I think the following works
 ```javascript
-this.health -= (damage - (damage * this.addMods())));
+this.health -= damage * this.addMods();
 ```
 
 ###UPSHIFT CHALLENGE
