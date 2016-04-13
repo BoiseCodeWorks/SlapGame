@@ -1,1 +1,5 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
+
+.cat-img {
+    width: 200px;
+}
