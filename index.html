@@ -3,7 +3,6 @@
 	<title>Slap Object Game</title>
 	<link rel="stylesheet" href="game.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="game.js"></script>
 </head>
 <body>
     
@@ -12,18 +11,25 @@
             
             <div class="col-xs-12 panel panel-default">
                 <div class="panel-heading">
-                    <span id="health">Health: </span>                 
+                    <ul class="list-inline">
+                        <li>Name: <span id="name"></span></li>
+                        <li>Patience: <span id="patience"></span></li>
+                        <li>Hits: </span id="hits"></span></li>
+                    </ul>
                  </div> <!--panel heading end-->
                  <div class="panel-body">
                      <img class="cat-img img-responsive" src="cat.jpg">
                  </div><!--panel body end-->
                  <div class="panel-footer">
                      <button class="btn" onclick="slap()">Pet</button>
+                     <button class="btn" onclick="caress()">Caress Tail</button>
+                     <button class="btn" onclick="rubBelly()">Rub Belly</button>
                  </div>
             </div>
             
         </section> <!--end body row-->        
     </div> <!--end container fluid-->
 	
+	<script src="game.js"></script>
 </body>
 </html>
