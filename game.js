@@ -6,7 +6,12 @@ var Item = function(name, modifier, description) {
     this.name = name;
     this.modifier = modifier;
     this.description = description;
-    this.draw = function(){};
+    this.draw = function(){
+        //returns one div each for each item you have in your possible items list
+        return "<li><button>Hi</button></li>";
+    };
+    
+    //"<button class='btn' onclick='useItem(items.box)'>Empty Cardboard Box</button>"
 }
 
 var items = {
@@ -16,7 +21,7 @@ var items = {
 }
 
 var player = {
-    playerInventory: [items.box],
+    playerInventory: [],
     addMods: function(inventoryArray){
         var totalModValue = 0;
         for (var i = 0; i < inventoryArray.length; i++){
@@ -25,6 +30,14 @@ var player = {
         }
         return totalModValue;
     }
+}
+
+function useItem(itemToUse){
+    //put item in inventory --player.playerInventory.push(thatitem)
+    player.playerInventory.push(itemToUse);   
+    //might make button disappear so it can't be added to the array multiple times?
+    //display a panel to rep item?
+    //.....make sure at replay items are cleared from inventory, and test
 }
 
 function updatePatience() {
@@ -59,12 +72,15 @@ function getName() {
 
 function calcDamage (rawDamage) {
     var damageModValue = player.addMods(player.playerInventory);
+    if (damageModValue === 0) {
+        damageModValue = 1;
+    }
     return rawDamage*damageModValue;
 }
 
 function stroke() {
     rawDamage = 1;
-    totalDamage = calcDamage(rawDamage);
+    var totalDamage = calcDamage(rawDamage);
     patience -= totalDamage;
     updatePatience();
     pets++;
@@ -73,7 +89,7 @@ function stroke() {
 
 function caress() {
     rawDamage = 5;
-    totalDamage = calcDamage(rawDamage);
+    var totalDamage = calcDamage(rawDamage);
     patience -= totalDamage;
     updatePatience();
     pets++;
@@ -82,7 +98,7 @@ function caress() {
 
 function rubBelly() {
     rawDamage = 10;
-    totalDamage = calcDamage(rawDamage);
+    var totalDamage = calcDamage(rawDamage);
     patience -= totalDamage;
     updatePatience();
     pets++;
@@ -96,6 +112,13 @@ function replay() {
     updatePets();
     updatePatience(); 
 }
+
+
+/*
+function drawItems() {
+    var itemsListElem = document.getElementById("player-items");
+    itemsListElem.innerHTML += 
+}*/
 
 
 getName();

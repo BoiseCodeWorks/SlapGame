@@ -9,3 +9,7 @@
 #replay-button {
     display: none;
 }
+
+#item-buttons {
+    padding: 10px;
+}
