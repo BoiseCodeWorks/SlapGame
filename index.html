@@ -9,21 +9,27 @@
     <div class="container-fluid">
         <section class="row">
             
-            <div class="col-xs-12 panel panel-default">
+            <div class="col-xs-12 panel panel-default" id="player-panel">
                 <div class="panel-heading">
                     <ul class="list-inline">
-                        <li>Name: <span id="name"></span></li>
-                        <li>Patience: <span id="patience"></span></li>
-                        <li>Hits: </span id="hits"></span></li>
+                        <li><b>Name:</b> <span id="name"></span></li>
+                        <li><b>Patience:</b> <span id="patience"></span></li>
+                        <li><b>Pets:</b> <span id="pets"></span></li>
                     </ul>
                  </div> <!--panel heading end-->
                  <div class="panel-body">
-                     <img class="cat-img img-responsive" src="cat.jpg">
+                     <div id="cat-img">
+                     </div>
                  </div><!--panel body end-->
                  <div class="panel-footer">
-                     <button class="btn" onclick="slap()">Pet</button>
-                     <button class="btn" onclick="caress()">Caress Tail</button>
-                     <button class="btn" onclick="rubBelly()">Rub Belly</button>
+                     <div id="pet-buttons">
+                        <button class="btn" onclick="stroke()">Stroke</button>
+                        <button class="btn" onclick="caress()">Caress Tail</button>
+                        <button class="btn" onclick="rubBelly()">Rub Belly</button>
+                     </div>
+                     <div id="replay-button">
+                         <button class="btn" onclick="replay()">Try Again?</button>
+                     </div>
                  </div>
             </div>
             
