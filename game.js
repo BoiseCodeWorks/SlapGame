@@ -2,6 +2,31 @@ var patience = 100;
 var pets = 0;
 var no = new Audio("no.wav");
 
+var Item = function(name, modifier, description) {
+    this.name = name;
+    this.modifier = modifier;
+    this.description = description;
+    this.draw = function(){};
+}
+
+var items = {
+    box: new Item("Empty Cardboard Box", 0.2, "A strangely alluring empty cardboard box."),
+    liveMouse: new Item("Live Mouse", 0.3, "Alive and wrigling."),
+    catnip: new Item("Catnip", 0.4, "Sweet, sweet kitty drugs.")
+}
+
+var player = {
+    playerInventory: [items.box],
+    addMods: function(inventoryArray){
+        var totalModValue = 0;
+        for (var i = 0; i < inventoryArray.length; i++){
+            var currentItem = inventoryArray[i];
+            totalModValue += currentItem.modifier;
+        }
+        return totalModValue;
+    }
+}
+
 function updatePatience() {
     var patienceElem = document.getElementById("patience");
     patienceElem.innerText = patience;
@@ -32,22 +57,33 @@ function getName() {
     nameElem.innerText = name;
 }
 
+function calcDamage (rawDamage) {
+    var damageModValue = player.addMods(player.playerInventory);
+    return rawDamage*damageModValue;
+}
+
 function stroke() {
-    patience -= 1;
+    rawDamage = 1;
+    totalDamage = calcDamage(rawDamage);
+    patience -= totalDamage;
     updatePatience();
     pets++;
     updatePets();
 }
 
 function caress() {
-    patience -= 5;
+    rawDamage = 5;
+    totalDamage = calcDamage(rawDamage);
+    patience -= totalDamage;
     updatePatience();
     pets++;
     updatePets();
 }
 
 function rubBelly() {
-    patience -= 10;
+    rawDamage = 10;
+    totalDamage = calcDamage(rawDamage);
+    patience -= totalDamage;
     updatePatience();
     pets++;
     updatePets();
