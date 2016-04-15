@@ -6,13 +6,13 @@ var Item = function(name, modifier, description) {
     this.name = name;
     this.modifier = modifier;
     this.description = description;
+    /*didn't use this
     this.draw = function(){
         //returns one div each for each item you have in your possible items list
-        return "<li><button>Hi</button></li>";
+        //ok no, the point is to below call a function that will draw they array you have equipped
+        return '<div class="item">'+ this.name +'</div>'; */
     };
-    
-    //"<button class='btn' onclick='useItem(items.box)'>Empty Cardboard Box</button>"
-}
+
 
 var items = {
     box: new Item("Empty Cardboard Box", 0.2, "A strangely alluring empty cardboard box."),
@@ -35,10 +35,19 @@ var player = {
 function useItem(itemToUse){
     //put item in inventory --player.playerInventory.push(thatitem)
     player.playerInventory.push(itemToUse);   
-    //might make button disappear so it can't be added to the array multiple times?
+    var activeItemElem = document.getElementById("active-items");
+    activeItemElem.innerHTML += "<div>" + itemToUse.name + "</div>";
+    
+   
+    
+//************TO DO********************
+    //might make button disappear so it can't be added to the array multiple times? --at very least don't let add more than 3
     //display a panel to rep item?
-    //.....make sure at replay items are cleared from inventory, and test
 }
+
+
+    
+
 
 function updatePatience() {
     var patienceElem = document.getElementById("patience");
@@ -72,10 +81,7 @@ function getName() {
 
 function calcDamage (rawDamage) {
     var damageModValue = player.addMods(player.playerInventory);
-    if (damageModValue === 0) {
-        damageModValue = 1;
-    }
-    return rawDamage*damageModValue;
+    return rawDamage*(1-damageModValue);
 }
 
 function stroke() {
@@ -110,7 +116,9 @@ function replay() {
     pets = 0;
     getName();
     updatePets();
-    updatePatience(); 
+    updatePatience();
+    player.playerInventory = [];
+    document.getElementById("active-items").innerHTML = ""
 }
 
 
