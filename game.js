@@ -1,16 +1,8 @@
-var patience = 100;
-var pets = 0;
-var no = new Audio("no.wav");
 
 var Item = function(name, modifier, description) {
     this.name = name;
     this.modifier = modifier;
     this.description = description;
-    /*didn't use this
-    this.draw = function(){
-        //returns one div each for each item you have in your possible items list
-        //ok no, the point is to below call a function that will draw they array you have equipped
-        return '<div class="item">'+ this.name +'</div>'; */
     };
 
 
@@ -33,16 +25,13 @@ var player = {
 }
 
 function useItem(itemToUse){
-    //put item in inventory --player.playerInventory.push(thatitem)
-    player.playerInventory.push(itemToUse);   
     var activeItemElem = document.getElementById("active-items");
-    activeItemElem.innerHTML += "<div>" + itemToUse.name + "</div>";
+    var pressedButton = document.getElementById(itemToUse);
+    player.playerInventory.push(items[itemToUse]);
+    activeItemElem.innerHTML += "<div>" + items[itemToUse].name + "</div>";
+    pressedButton.style.display = "none";
+    //display panel?
     
-   
-    
-//************TO DO********************
-    //might make button disappear so it can't be added to the array multiple times? --at very least don't let add more than 3
-    //display a panel to rep item?
 }
 
 
@@ -114,21 +103,16 @@ function rubBelly() {
 function replay() {
     patience = 100;
     pets = 0;
+    no = new Audio("no.wav");
     getName();
     updatePets();
     updatePatience();
     player.playerInventory = [];
     document.getElementById("active-items").innerHTML = ""
+    document.getElementById("box").style.display = "inline-block";
+    document.getElementById("liveMouse").style.display = "inline-block";
+    document.getElementById("catnip").style.display = "inline-block";
 }
 
 
-/*
-function drawItems() {
-    var itemsListElem = document.getElementById("player-items");
-    itemsListElem.innerHTML += 
-}*/
-
-
-getName();
-updatePets();
-updatePatience();
+replay()
