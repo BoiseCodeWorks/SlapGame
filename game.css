@@ -1,1 +1,29 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
+
+.cat-img {
+    flex-shrink:0;
+    min-width:85%;
+    min-height:85%;
+    border-radius: 10%;
+}
+
+#replay-button {
+    display: none;
+}
+
+#item-buttons {
+    padding: 10px;
+}
+
+.item-img {
+    border-radius: 50%;
+}
+
+ul {
+    display: inline-block;
+}
+
+.right {
+    display: inline-block;
+    float: right;
+}

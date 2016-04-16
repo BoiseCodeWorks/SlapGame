@@ -1,11 +1,62 @@
 <html>
 <head>
 	<title>Slap Object Game</title>
-	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="">
-	<script src=""></script>
+	<link rel="stylesheet" href="game.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
+    
+    <div class="container-fluid">
+        <section class="row">
+            <div class="col-xs-12 panel panel-default" id="player-panel">
+                <div class="panel-heading">
+                        <ul class="list-inline">
+                            <li><b>Name:</b> <span id="name"></span></li>
+                            <li><b>Patience:</b> <span id="patience"></span></li>
+                            <li><b>Pets:</b> <span id="pets"></span></li>
+                        </ul>
+                        <h4 class="right">CAT GAME</h4>
+                 </div> <!--panel heading end-->
+                 <div class="panel-body">
+                     <div class="col-xs-6" id="cat-img-div">
+                         <img class="img-responsive cat-img" src="cat.jpg">
+                     </div>
+                     <div class="col-xs-6">
+                         <section class="row">
+                            <div class="col-xs-12">
+                                <h4 class="right">Items In Use</h4>
+                            </div>
+                         </section>
+                          <section class="row">
+                                <div class="col-xs-12" id="active-items">
+                               </div> 
+                            </section> <!--close title row-->
+                     </section> <!--close row-->
+                 </div><!--panel body end-->
+                 <div class="panel-footer">
+                     <div id="pet-buttons">
+                        <button class="btn" onclick="petAction(1)">Stroke</button>
+                        <button class="btn" onclick="petAction(5)">Caress Tail</button>
+                        <button class="btn" onclick="petAction(10)">Rub Belly</button>
+                     </div>
+                     <div id="replay-button">
+                         <button class="btn" onclick="replay()">Try Again?</button>
+                     </div>
+                     <div id="item-buttons">
+                         <p>Use Item:</p>
+                         <ul class="list-inline">
+                            <button class='btn' id ="box" onclick='useItem("box")'>Empty Cardboard Box</button>
+                            <button class='btn' id ="liveMouse" onclick='useItem("liveMouse")'>Live Mouse</button>
+                            <button class='btn' id ="catnip" onclick='useItem("catnip")'>Catnip</button>
+                         </ul>
+                         <span class="right"><a href="about.html" target="_blank">About this game</a></span>
+                     </div>
+                 </div>
+            </div>
+            
+        </section> <!--end body row-->        
+    </div> <!--end container fluid-->
 	
+	<script src="game.js"></script>
 </body>
 </html>
