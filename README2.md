@@ -52,7 +52,7 @@ Now our SlapGame may not be as advanced as Street Fighter but we should still st
 Now you could of course create targets using an object literal `{}` but it might make more sense to create a constructor that we can use to create many targets easily.
 
 ####Warning Refactoring will break your code.... But its okay. Don't be afraid to break things.
-Now work on converting your global variables to properties that can be used through a `Player constructor`. This will make it so you have to update your code in your `update` function to something like `player.health`
+Now work on converting your global variables to properties that can be used through a `Target constructor`. This will make it so you have to update your code in your `update` function to something like `target.health`
 
 ###Step 2 - JS - Health Condition
 - We are now going to add a component that changes the color of the background when the player's health drops below
