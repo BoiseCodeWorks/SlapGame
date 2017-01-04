@@ -31,7 +31,10 @@ Students will use javascript in order to interact with the DOM to create a dynam
   - if things are working properly you should be able to hit the slap button and see the
   alert window with a decrease in health.
 2. To prevent having to show the targets health in popup, let's link the target's health directly to the user interface.
-3. Add a span element to the header for the target's health: example - <span>Health:<span id="health">--</span></span>
+3. Add a span element to the header for the target's health: example - 
+```html
+<span>Health:<span id="health">--</span></span>
+```
   - the id is important so we can call the element from JS easily.
 
 ###Step 5 - JS - Update the user interface
