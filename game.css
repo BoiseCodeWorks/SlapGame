@@ -1,1 +1,38 @@
-/*Only use this file if you want to override bootstrap or create your own style*/
+body{
+  background: url(http://img01.deviantart.net/d4cc/i/2012/025/c/9/pitch__forest_by_catgirlkari-d4nlrp0.jpg) center center;
+  background-size: cover;
+}
+.stage{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.player{
+  display: flex;
+}
+
+img.invert {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+h1{
+  color: #fff;
+  margin: 20px;
+  padding: 35px;
+  text-align: center;
+}
+
+.dummy{
+  background: url(http://network.mugenguild.com/guild/stances/ss1_bonus.gif) no-repeat;
+  position: absolute;
+  bottom: 20px;
+  left: 48%;
+  height: 130px;
+}
+
+

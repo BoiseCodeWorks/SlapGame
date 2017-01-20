@@ -2,10 +2,29 @@
 <head>
 	<title>Slap Object Game</title>
 	<link rel="stylesheet" href="game.css">
-	<link rel="stylesheet" href="">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 	
 </head>
 <body>
+	<div class="stage">
+  <div class="player">
+    <button id="hits>Hits</button>
+    <button onclick="onSlap()">Slap</button>
+    <button onclick="onPunch()">Punch</button>
+    <button onclick="onKick()">Kick</button>
+    <button onclick="onHadouken()"><img src="asset/img/hudouku.gif" height="80" /></button>
+	<button onclick="onReset()">Reset</button>
+  </div>
+</div>
+<div><h1 id="health1"></h1></div>
+<div>
+	<h1>Hits: </h1></div>
+	<div><h1 id="hits"></h1></div>
+<div class="dummy">
+  <h1 id="health">100</h1>
+ 
+  
+</div>
 	<script src="game.js"></script>
 </body>
 </html>
