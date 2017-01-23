@@ -57,14 +57,20 @@ dataStore.attack = function(type) {
 ```
 (Remember this will also need to be modified on your HTML)
 
-2. Do this with your addMods() and giveItems() as well
-3. To get the targets name we will want to make a copy using the Object.assign() method and create a public function that returns the current copy
+2. Do this with your giveItems() as well
+3. In addition, write a function so when updating the DOM view with our target we can use the Object.assign() method  that returns the current copy of that player. (something like getTarget)
 
 ####Step 3 - Controller
 
 The next step is to put together our controller. The controller acts as the middleman between our service and the DOM. We will instantiate our service within the controller constructor to allow access to all of the services public properties and methods.
 
 1. Start by creating your "GameController" constructor function, and enstatiating your service to var dataStore.
+```javascript
+//something like this
+function GameController(){
+var dataStore = new GameService()
+}
+```
 2. Now bring your update function over and its time to REFACTOR!
     -In order for our update functions to work we need to get a current copy of the target object, fortunately we already wrote a function in the service that will do just that. Call that function using your dataStore.getTarget at the beginning of the function and assign it to var target.
 3. If you refresh your page you should now have your target and its stats loading in. However your attack functions won't work yet. Using a public function get that feature working again.
