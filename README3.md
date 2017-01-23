@@ -47,7 +47,7 @@ Now that we have our data wrapped up in a service the functions we have added ar
 
 Our attacks are already written but we should modify them to employ better coding practices (if you haven't already).
 
-1. First is to reduce all of our attacks to operate under one function. This should be a function that takes in a string ("slap", "puch", or "kick") and uses the target object like a dictionary to apply it. Additionally it should be pubic using our aliased "this" (dataStore). example:
+1. First is to reduce all of our attacks to operate under one function. This should be a function that takes in a string ("slap", "puch", or "kick") and uses the target object like a dictionary to apply it. Additionally it should be public using our aliased "this" (dataStore). example:
 
 ```javascript
 dataStore.attack = function(type) {
