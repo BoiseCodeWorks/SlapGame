@@ -1,12 +1,12 @@
-##The Slap Game - Part 3
+## The Slap Game - Part 3
 
-###Encapsulation
+### Encapsulation
  
 We now have a fully functioning slap game! Yay! However we know there are vulnerabilities right now that allow savvy users to change parts of the game they should not have access to simply by redefining them in the command line. 
 
 In order to protect our data we need to separate it out using encapsulation, and only allow the user to access it through methods we provide.
 
-####Step 1 - Service
+#### Step 1 - Service
 
 Lets Encapsulate our data and methods into a constructor function called a Service. Services are where we manage the data for  our application by utilizing both private and public functions and variables that can be called by our Controller, but more on controllers in a minute.
 
@@ -41,7 +41,7 @@ function Item(name, modifier, description) {
     };
 ```
 
-####Step 2 - Getters and Setters
+#### Step 2 - Getters and Setters
 
 Now that we have our data wrapped up in a service the functions we have added are private, meaning they can only be changed from within this service. We need to add the functions that will serve as bridges allowing the user (through the controller) the ability to manipulate the information in a way we control. 
 
@@ -60,7 +60,7 @@ dataStore.attack = function(type) {
 2. Do this with your giveItems() as well
 3. In addition, write a function so when updating the DOM view with our target we can use the Object.assign() method  that returns the current copy of that player. (something like getTarget)
 
-####Step 3 - Controller
+#### Step 3 - Controller
 
 The next step is to put together our controller. The controller acts as the middleman between our service and the DOM. We will instantiate our service within the controller constructor to allow access to all of the services public properties and methods.
 
@@ -76,10 +76,8 @@ var dataStore = new GameService()
 3. If you refresh your page you should now have your target and its stats loading in. However your attack functions won't work yet. Using a public function get that feature working again.
 
 
-###Additional Challenges
+### Additional Challenges
 
 - Your game is pretty fun, but what if your target fought back? How could you have them attack you, or another target on every turn? 
 - Maybe your user should have a choice of the target, add a few different targets to choose from at the start of the game
 - Could you add a form that allowed the user to create new targets and items utilizing your constructor functions let them enjoy this customization? 
-
-
