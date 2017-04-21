@@ -1,12 +1,29 @@
 
 var health = 100
+var name = "Waffler"
+var hits = 0
+
+function update() {
+  document.getElementById("health").innerText = health
+  document.getElementById("name").innerText = name
+  document.getElementById("hits").innerText = hits
+}
+update()
 
 function slap() {
   health -= 1
-  
-}
-function update() {
-  document.getElementById("health").innerText = health
+  update()
+  hits += 1
 }
 
-update()
+function hit() {
+  health -= 5
+  update()
+  hits += 1
+}
+
+function kick() {
+  health -= 10
+  update()
+  hits += 1
+}
