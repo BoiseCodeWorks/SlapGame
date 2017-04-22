@@ -11,14 +11,14 @@
 <body>
 	<div class="container-fluid">
 		<div>
-			<span>Health:<span id="health"></span></span>
-			<span>Name<span id="name"></span></span>
-			<span>Hits<span id="hits"></span></span>
+			<span>Health: <span id="health"></span></span>
+			<span>Name: <span id="name"></span></span>
+			<span>Hits: <span id="hits"></span></span>
 		</div>
-		<div>
-			<button type="button" onclick="slap()" diabled="false">Pow!</button>
-			<button type="button" onclick="hit()" diabled="false">Biff!</button>
-			<button type="button" onclick="kick()" diabled="false">Ka-Boom!</button>
+		<div class="btn-group" role="group" aria-label="...">
+			<button type="button" onclick="slap()" class="btn btn-default">Slap!</button>
+			<button type="button" onclick="hit()" class="btn btn-default">Hit!</button>
+			<button type="button" onclick="kick()" class="btn btn-default">Kick!</button>
 		</div>
 		<script src="game.js"></script>
 	</div>
