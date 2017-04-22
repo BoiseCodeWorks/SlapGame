@@ -3,10 +3,16 @@ var health = 100
 var name = "Waffler"
 var hits = 0
 
+
 function update() {
   document.getElementById("health").innerText = health
   document.getElementById("name").innerText = name
   document.getElementById("hits").innerText = hits
+
+  if (health <= 0) {
+    
+    // type="button" = disabled="true"
+  }
 }
 update()
 
