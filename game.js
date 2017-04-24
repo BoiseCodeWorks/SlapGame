@@ -31,21 +31,21 @@ function kick() {
   update()
 }
 function changeImgSlap() {
-  document.getElementById("penguin-pic").src = "http://maxpixel.freegreatpicture.com/static/photo/1x/Kapow-Fight-Comic-Explosion-Comic-Book-Expletive-1601675.png";
+  document.getElementById("penguin-pic").src = "2017-04-24-00-21-40.png";
   setTimeout(function () {
     document.getElementById("penguin-pic").src = "http://maxpixel.freegreatpicture.com/static/photo/1x/Linux-Zoo-Bird-Beak-Animal-Black-Penguin-Tux-23253.png";
   }, (600));
 }
 
 function changeImgHit() {
-  document.getElementById("penguin-pic").src = "https://pixabay.com/get/e833b10e2ef3093ed1534705fb0938c9bd22ffd41db8124194f0c47da3/zap-1601678_1920.png";
+  document.getElementById("penguin-pic").src = "2017-04-24-00-18-50.png";
   setTimeout(function () {
     document.getElementById("penguin-pic").src = "http://maxpixel.freegreatpicture.com/static/photo/1x/Linux-Zoo-Bird-Beak-Animal-Black-Penguin-Tux-23253.png";
   }, (600));
 }
 
 function changeImgKick() {
-  document.getElementById("penguin-pic").src = "http://maxpixel.freegreatpicture.com/static/photo/1x/Fight-Pow-Expletive-Comic-Book-Explosion-Comic-1601674.png";
+  document.getElementById("penguin-pic").src = "2017-04-24-00-23-18.png";
   setTimeout(function () {
     document.getElementById("penguin-pic").src = "http://maxpixel.freegreatpicture.com/static/photo/1x/Linux-Zoo-Bird-Beak-Animal-Black-Penguin-Tux-23253.png";
   }, (600));
