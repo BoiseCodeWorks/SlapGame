@@ -1,8 +1,21 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
 body {
-  background: url("https://wallpaperfall.com/images/cartoon-background-widDf0US54.jpg");
-  text-align: center;
-  background-size: 100%;
-  background-origin: content-box;
-  background-repeat: off;
+  background: black url("http://maxpixel.freegreatpicture.com/static/photo/2x/Cute-Antarctic-Animals-Penguins-Emperor-Life-Ice-429136.jpg") no-repeat center;}
+
+.well {
+  background: #00bfff;
+  padding: 0px;
+  font-size: 25px;
+  font-family: 'Audiowide', cursive;
+  color: #ff00ff;
+}
+
+.penguin {
+  width: 200px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 70%;
+  left: 50%;
 }

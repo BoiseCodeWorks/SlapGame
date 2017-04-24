@@ -5,22 +5,55 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	<link rel="stylesheet" type="text/css" href="game.css">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
 </head>
 
-<body class="img-responsive center-block">
-	<div class="container-fluid">
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="well well-sm text-center">
+					<span>Health: <span id="health"></span></span>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="well well-sm text-center">
+					<span>Name: <span id="name"></span></span>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="well well-sm text-center">
+					<span>Hits: <span id="hits"></span></span>
+				</div>
+			</div>
+		</div>
 		<div>
-			<span>Health: <span id="health"></span></span>
-			<span>Name: <span id="name"></span></span>
-			<span>Hits: <span id="hits"></span></span>
+			<img class="penguin img-responsive" id="penguin-pic" src="http://maxpixel.freegreatpicture.com/static/photo/1x/Linux-Zoo-Bird-Beak-Animal-Black-Penguin-Tux-23253.png">
 		</div>
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" onclick="slap()" class="btn btn-default">Slap!</button>
-			<button type="button" onclick="hit()" class="btn btn-default">Hit!</button>
-			<button type="button" onclick="kick()" class="btn btn-default">Kick!</button>
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-5">
+					</div>
+					<div class="col-xs-4">
+						<div class="navbar-header">
+							<div class="btn-group" role="group">
+								<button type="button" onclick="slap()" class="btn btn-default navbar-btn">Slap!</button>
+								<button type="button" onclick="hit()" class="btn btn-default navbar-btn">Hit!</button>
+								<button type="button" onclick="kick()" class="btn btn-default navbar-btn">Kick!</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div>
+			<script src="game.js"></script>
 		</div>
-		<script src="game.js"></script>
 	</div>
-
 </body>
+
 </html>
