@@ -129,8 +129,9 @@ this.health -= damage * this.addMods();
 - Write a function that will allow the user to click each button and giveItem("item") to the player
 - This shouldn't move the items from the items object but make a copy of them in the target.items array.
 
-### Bonus Challenges 
-- Make your game pretty, this will likely be in your portfolio so add a background, move things around with bootstrap etc.
+ #### Lastly make your game pretty, this will likely be in your portfolio so add a background, move things around with bootstrap etc. 
+
+### Bonus Challenges (.5pts each)
 - Draw items to screen dynamically; can you write a function that will itterate over your items list and create a button for each one?
 - K.O. Notification: Make a notification apear on the screen once the target's health reaches 0
 - Damage Indicator: Most games have not only a number but a health bar, how could you create one for your target (checkout Bootstraps Progress Bars)
