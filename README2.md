@@ -91,23 +91,27 @@ var items = {
 - We are using an object to store the master list of items in our game. However, we need to be able to give our 
   target items. In this case, we need to use an array, because it may be possible for the user to have multiples of the same item.
 1. Create an array property named items on the target object.
-2. Place the shield in the first index of the items array.
 
 ```javascript
- items:[items.shield]
+var ryu = {
+  health: 100,
+  ....
+  ....
+  items:[]
 ``` 
 
-3. Keep in mind that the \[items] object that is global, is completly different than the \[items] array on the target.
+2. Keep in mind that the \[items] object that is global, is completly different than the \[items] array on the target.
+3. Now write a function (something like giveShield()) that will push an item from the global items object into the items array on the target.
  
 ### Step 5 - REDUCE THE DAMAGE!... almost (1pt)
 - How are you at math?
-1. Create a function on the target object called, addMods().
-2. Using a "for loop", calculate the combined value of modifiers in the player.items array.
+1. Create a function that will be called, addMods().
+2. Using a "for loop", calculate the combined value of modifiers in the target.items array.
 	- this may be tricky, but think it through before reading the following hints.
 	##HINTS
 	1. We need to create a variable to hold the running modifier total
 	2. This variable should be outside of the loop
-	3. Inside the loop, increase the running total by the 'current items modifier'
+	3. Inside the loop, increase the running total by the 'current items' modifier value
 	4. Arrays need to be accessed by index. \[i]
 	
 3. Have the function return the total.
@@ -117,7 +121,7 @@ var items = {
   is the same as on paper. Order of operations matters: **5 * .3 =  1.5**
 - Stuck?
 - Look at the hit function()
-- Total damage done = damage * \[sum of all modifiers]
+- Total damage done = damage + \[sum of all modifiers]
 - Did you get it? Try this:
 ```javascript
 this.health -= damage * this.addMods();
@@ -126,7 +130,7 @@ this.health -= damage * this.addMods();
 
 ### Step 7 - Let the user select the Items. (1pt)
 - Add a div in the body with an id="items" and put a button for each item
-- Write a function that will allow the user to click each button and giveItem("item") to the player
+- Write a function that will allow the user to click each button and giveItem("item") to the target
 - This shouldn't move the items from the items object but make a copy of them in the target.items array.
 
  #### Lastly make your game pretty, this will likely be in your portfolio so add a background, move things around with bootstrap etc. 
