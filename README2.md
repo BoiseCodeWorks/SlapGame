@@ -135,7 +135,7 @@ this.health -= damage * this.addMods();
 
  #### Lastly make your game pretty, this will likely be in your portfolio so add a background, move things around with bootstrap etc. 
 
-### Bonus Challenges (.5pts each)
+### Stretch Goals
 - Draw items to screen dynamically; can you write a function that will itterate over your items list and create a button for each one?
 - K.O. Notification: Make a notification apear on the screen once the target's health reaches 0
 - Damage Indicator: Most games have not only a number but a health bar, how could you create one for your target (checkout Bootstraps Progress Bars)
