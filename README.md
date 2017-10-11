@@ -9,13 +9,13 @@ Students will use javascript in order to interact with the DOM to create a dynam
 2. Create the file index.html and a script file called game.js and a css file name game.css.
 3. Commit changes and push them back to GitHub.
 
-### Step 2 - HTML - Create page layout and Slap button (2pts)
+### Step 2 - HTML - Create page layout and Slap button
 
 1. Link Bootstrap game.js and game.css to index.html.
 2. Add an image to the body with a width of 200px this is your "target"
 3. Add a button to the footer with the text "Slap"
 
-### Step 3 - JS - Declare variables and write the Slap function (2pts)
+### Step 3 - JS - Declare variables and write the Slap function
 
 1. Create a global variable: var health=100;
 2. Create a function: slap()
@@ -25,7 +25,7 @@ Students will use javascript in order to interact with the DOM to create a dynam
     - You should see an alert of 99 show on the screen.
     - If this is working, remove the test to prevent popups on every page load.
 
-### Step 4 - HTML - Link the Slap button to the Slap function (2pts)
+### Step 4 - HTML - Link the Slap button to the Slap function
 
 1. On the slap button element, add the attribute onClick="slap()"
   - If things are working properly you should be able to hit the slap button and see the
@@ -37,7 +37,7 @@ Students will use javascript in order to interact with the DOM to create a dynam
 ```
   - The id is important so we can call the element from JS easily.
 
-### Step 5 - JS - Update the user interface (2pts)
+### Step 5 - JS - Update the user interface
 
 1. We are now going to add a function to manipulate the user interface by using the DOM API.
   - To do this, javascript is required.
@@ -50,7 +50,7 @@ Students will use javascript in order to interact with the DOM to create a dynam
 4. If it is working, make sure you add a call to update at the end of the slap function. This way the screen is updated after every slap.
 
 
-### Step 6 - HTML - Add the other buttons and stuff... (2pts)
+### Step 6 - HTML - Add the other buttons and stuff...
 
 1. Add 2 more buttons Punch, and Kick to the UI, as well as their respective functions in javascript.
   - Have the punch function decrease the target's health by 5, and kick by 10.
@@ -69,3 +69,11 @@ Students will use javascript in order to interact with the DOM to create a dynam
   - Click the punch button, you should see the target health drop to 94 and hit count to 2.
   - Finally click the Kick button, you should see the target health drop to 84 and hit count to 3.
   - Keep pressing buttons... What happens when the target has been hit for over 100 hit points? Why does this happen?
+
+### Key Features 
+  - Visualization: Current Health and Health Updates are visible while game is being played
+  - Functionality: 3 Buttons to affect status in varying amounts
+### Secondary goals
+  - Cannot get below 0 or above max
+  - CSS Changes based on state of application
+
