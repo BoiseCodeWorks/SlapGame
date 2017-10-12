@@ -70,10 +70,10 @@ Students will use javascript in order to interact with the DOM to create a dynam
   - Finally click the Kick button, you should see the target health drop to 84 and hit count to 3.
   - Keep pressing buttons... What happens when the target has been hit for over 100 hit points? Why does this happen?
 
-### Key Features 
-  - Visualization: Current Health and Health Updates are visible while game is being played
-  - Functionality: 3 Buttons to affect status in varying amounts
-### Secondary goals
-  - Cannot get below 0 or above max
-  - CSS Changes based on state of application
+### Requirements   
+  - Visualization: 
+      - Current Health and Health Updates are visible while game is being played
+  - Functionality: 
+      - 3 Buttons to affect status in varying amounts
+
 
