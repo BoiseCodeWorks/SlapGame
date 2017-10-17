@@ -76,7 +76,7 @@ var dataStore = new GameService()
 3. If you refresh your page you should now have your target and its stats loading in. However your attack functions won't work yet. Using a public function get that feature working again.
 
 
-### Additional Challenges (1pt each)
+### Stretch Goals
 
 - Your game is pretty fun, but what if your target fought back? How could you have them attack you, or another target on every turn? 
 - Maybe your user should have a choice of the target, add a few different targets to choose from at the start of the game
