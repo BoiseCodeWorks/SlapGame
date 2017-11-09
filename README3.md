@@ -75,6 +75,11 @@ var dataStore = new GameService()
     -In order for our update functions to work we need to get a current copy of the target object, fortunately we already wrote a function in the service that will do just that. Call that function using your dataStore.getTarget at the beginning of the function and assign it to var target.
 3. If you refresh your page you should now have your target and its stats loading in. However your attack functions won't work yet. Using a public function get that feature working again.
 
+## Requirements
+ - Visualization: 
+ 	- Project maintains visuals previously defined
+ - Functionality:
+ 	- Functionality remains however project has been encapsulated
 
 ### Stretch Goals
 
