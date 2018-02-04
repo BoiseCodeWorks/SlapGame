@@ -73,7 +73,7 @@ var Obj = function(option1, option2, option3){
 ### Step 3 - Create the items
 - Since our game will have multiple items, we need to find an easy way to access them. 
  We can use an array to store a collection of objects. However, arrays are not always the easiest to use, because they require us
- to loop over the entire collection when we are looking for a specific item. What if we instead, create an object that uses the name of the item as a property (for more on this topic, review the dictionaries cheetsheet)?
+ to loop over the entire collection when we are looking for a specific item. What if we instead, create an object that uses the name of the item as a property (for more on this topic, review the <a href="http://bcw-cheatsheets.herokuapp.com/cheatsheets/1">dictionaries</a> cheetsheet)?
 1. Create an object called items.
 2. Following the example below, add 2 more items.
 
