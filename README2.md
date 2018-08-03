@@ -49,24 +49,25 @@ Now our SlapGame may not be as advanced as Street Fighter but we should still st
 
 ### Constructing our Targets
 
-You could of course create targets using an object literal `{}` but it might make more sense to create a constructor that we can use to create many targets easily.
+Having our values for health, name, and hits is not the best way to contain our data, what happens when we switch characters? Lets fix that.
 
 #### Warning Refactoring will break your code.... But its okay. Don't be afraid to break things.
 
-Now work on converting your global variables to properties that can be used through a `Target constructor`. This will make it so you have to update your code in your `update` function to something like `target.health`
+Now work on converting your global variables to properties that can be used through a `Target Object`. This will make it so you have to update your code in your `update` function to something like `target.health`
+
+Get your code back up and working with this new object
 
 ### Step 2 - Items (2pts)
-- It's now time to add items to our game. Items are objects that will be created using a constructor.
-  the items are responsible for reducing or increasing the damage done to the target on hit.
-1. Create an Item constructor that takes in the following "options": (name, modifier, description).
-2. The Item should have 3 properties: name, modifier, description.
-3. Your constructor should look like the one below. 
+- It's now time to add items to our game. Items are objects that will be created to allow modifications to our attacks.
+  The items are responsible for reducing or increasing the damage done to the target on hit.
+1. The Item should have 3 properties: name, modifier, description.
+2. Your items should look like the one below. 
 
 ```javascript
-var Obj = function(option1, option2, option3){
-	this.option1 = option1;
-	this.option2 = option2;
-	this.option3 = option3;
+var fire = {
+	name: 'Fire',
+	modifier: 2,
+	description: 'IT BURNS!'
 }
 ```
  
@@ -79,17 +80,17 @@ var Obj = function(option1, option2, option3){
 
 ```javascript
 var items = {
-	shield:new Item("Shield",0.3,"This is an awesome shield!"),
+	fire: {name: 'Fire', modifier: 2, description: 'IT BURNS!'}
 	...
 	...
 }
 ```
- - We can now easily reference the shield item by calling items.shield.
- - What would items.shield.name return?
+ - We can now easily reference the fire item by calling items.fire.
+ - What would items.fire.name return?
  
 ### Step 4 - Give some items to our target
 - We are using an object to store the master list of items in our game. However, we need to be able to give our 
-  target items. In this case, we need to use an array, because it may be possible for the user to have multiples of the same item.
+  target items. In this case, we need to use an array, because it may be possible for the user to have multiples of the same item (if not you may want to use an object).
 1. Create an array property named items on the target object.
 
 ```javascript
@@ -101,7 +102,7 @@ var ryu = {
 ``` 
 
 2. Keep in mind that the \[items] object that is global, is completly different than the \[items] array on the target.
-3. Now write a function (something like giveShield()) that will push an item from the global items object into the items array on the target.
+3. Now write a function (something like giveFire()) that will push an item from the global items object into the items array on the target.
  
 ### Step 5 - REDUCE THE DAMAGE!... almost
 - How are you at math?
@@ -118,22 +119,21 @@ var ryu = {
 
 ### Step 6 - REDUCE THE DAMAGE!... for real this time.
 - Before you begin this step, remember math in javascript
-  is the same as on paper. Order of operations matters: **5 * .3 =  1.5**
+  is the same as on paper. Order of operations matters: **5 + -2 =  3**
 - Stuck?
 - Look at the hit function()
 - Total damage done = damage + \[sum of all modifiers]
 - Did you get it? Try this:
 ```javascript
-this.health -= damage * this.addMods();
+this.health -= damage + this.addMods();
 ```
-- If there are no mods the total should be 1
 
 ### Step 7 - Let the user select the Items.
 - Add a div in the body with an id="items" and put a button for each item
 - Write a function that will allow the user to click each button and giveItem("item") to the target
 - This shouldn't move the items from the items object but make a copy of them in the target.items array.
 
- #### Lastly make your game pretty, this will likely be in your portfolio so add a background, move things around with bootstrap etc. 
+ #### Lastly make your game pretty, this might be in your portfolio so add a background, move things around with bootstrap etc. 
 
 ## Requirements
  - Visualization: 
