@@ -1,4 +1,4 @@
-## The Slap Game - Part 1 (10pts)
+## The Slap Game - Part 1
 
 #### Objective:
 Students will use javascript in order to interact with the DOM to create a dynamic webpage.
