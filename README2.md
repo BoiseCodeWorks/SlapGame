@@ -125,7 +125,7 @@ var ryu = {
 - Total damage done = damage + \[sum of all modifiers]
 - Did you get it? Try this:
 ```javascript
-this.health -= damage + this.addMods();
+target.health -= damage + addMods();
 ```
 
 ### Step 7 - Let the user select the Items.
