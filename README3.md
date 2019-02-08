@@ -164,9 +164,9 @@ class App {
 window.app = new App()
 ```
 
-* __Note__: Your onclick's will now have to drill down to the GameController, e.g. `onclick="app.controllers.gameController.attack('slap')"`
+* __Note__: Your onclick's will now have to drill down to the GameController, e.g. `onclick="app.controllers.gameController.attackTarget('slap')"`
 
-## Requirements
+## Requirements (Part 3 is not required to pass this first checkpoint)
  - Visualization: 
  	- Project maintains visuals previously defined
  - Functionality:
