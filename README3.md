@@ -165,6 +165,7 @@ window.app = new App()
 ```
 
 * __Note__: Your onclick's will now have to drill down to the GameController, e.g. `onclick="app.controllers.gameController.attackTarget('slap')"`
+* __Note__: Your index.html's script tag that's connecting the the JS files to the document will now need to include a type attribute with a value of module, e.g., `<script src="app/main.js" type="module"></script>`
 
 ## Requirements (Part 3 is not required to pass this first checkpoint)
  - Visualization: 
