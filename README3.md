@@ -5,75 +5,166 @@
 We now have a fully functioning slap game! Yay! However we know there are vulnerabilities right now that allow savvy users to change parts of the game they should not have access to simply by redefining them in the command line. 
 
 In order to protect our data we need to separate it out using encapsulation, and only allow the user to access it through methods we provide.
+ 
+__Note__: Part 3 is a refactor of the slap game up to this point. README3 is an overview, and not a complete guide.
 
-#### Step 1 - Service (5pts)
+#### Step 1 - Classes
 
-Lets Encapsulate our data and methods into a constructor function called a Service. Services are where we manage the data for  our application by utilizing both private and public functions and variables that can be called by our Controller, but more on controllers in a minute.
+Lets begin encapsulating our applications data by first creating classes for each complex object of our game, namely the target and the items.
 
-1. Create a constructor function to act as your service and title it "GameService"
-2. Identify all of your variables and objects that you will want to protect as a part of your service. This should be your Targets as well as your Items, and move these objects into your new "GameService" function 
-3. Lastly we are going to alias the keyword 'this' to "dataStore" (we do this to make things more readable when writing our controller)
-
-Your service should look something like this:
-
-```javascript
-function GameService(){
-
-var dataStore = this
-var target = new Target("Scarecrow", 100, 1, 5, 10);
-
-function Target(name, health, slap, punch, kick) {
-        this.name = name;
-        this.health = health;
-        this.attacks = {
-            "slap": slap,
-            "punch": punch,
-            "kick": kick
-        };
-        this.items = []
-        this.hits = 0
-    };
-    
-function Item(name, modifier, description) {
-        this.name = name;
-        this.modifier = modifier;
-        this.description = description;
-    };
-```
-
-#### Step 2 - Getters and Setters
-
-Now that we have our data wrapped up in a service the functions we have added are private, meaning they can only be changed from within this service. We need to add the functions that will serve as bridges allowing the user (through the controller) the ability to manipulate the information in a way we control. 
-
-Our attacks are already written but we should modify them to employ better coding practices (if you haven't already).
-
-1. First is to reduce all of our attacks to operate under one function. This should be a function that takes in a string ("slap", "puch", or "kick") and uses the target object like a dictionary to apply it. Additionally it should be public using our aliased "this" (dataStore). example:
+1. Create a new file for each class (_these new files will live within a new folder named models_)
+2. Export each class out of their files (`export default`) in order to utilize that class elsewhere in our application
+   
+Your Target.js should look something like this:
 
 ```javascript
-dataStore.attack = function(type) {
-    target.health -= target.attacks[type] * this.addMods()
-    target.hits += 1
+export default class Target {
+  contructor(name, health, slap, punch, kick) {
+    this.name = name
+    this.health = health
+    this.attacks = {
+      "slap": slap,
+      "punch": punch,
+      "kick": kick
+    }
+    this.items = []
+    this.hits = 0
+  }
 }
 ```
-(Remember this will also need to be modified on your HTML)
 
-2. Do this with your giveItems() as well
-3. In addition, write a function so when updating the DOM view with our target we can use the Object.assign() method  that returns the current copy of that player. (something like getTarget)
+And your Item.js should look something like this:
 
-#### Step 3 - Controller (5pts)
-
-The next step is to put together our controller. The controller acts as the middleman between our service and the DOM. We will instantiate our service within the controller constructor to allow access to all of the services public properties and methods.
-
-1. Start by creating your "GameController" constructor function, and enstatiating your service to var dataStore.
 ```javascript
-//something like this
-function GameController(){
-var dataStore = new GameService()
+export default class Item {
+  constructor(name, modifier, description) {
+    this.name = name
+    this.modifier = modifier
+    this.description = description
+  }
 }
 ```
-2. Now bring your update function over and its time to REFACTOR!
-    -In order for our update functions to work we need to get a current copy of the target object, fortunately we already wrote a function in the service that will do just that. Call that function using your dataStore.getTarget at the beginning of the function and assign it to var target.
-3. If you refresh your page you should now have your target and its stats loading in. However your attack functions won't work yet. Using a public function get that feature working again.
+
+#### Step 2 - Service
+
+Lets Encapsulate our data and methods into a class called GameService. Services are where we manage the data for our application by utilizing both private and public functions and variables that can be called by our Controller, but more on controllers in a minute.
+
+1. Create a new folder called components and inside components create a game-service.js
+2. Create a new class to act as your service and title it "GameService"
+
+Your game-service.js should look something like this:
+
+```javascript
+import Target from '../models/Target.js'
+import Item from '../models/Item.js'
+
+let _target = new Target("Scarecrow", 100, 1, 5, 10);
+let hat = new Item("Straw Hat", 5, "It's my good hat");
+
+let _items = [hat] //create and add as many items as you like
+
+export default class GameService {
+  constructor() { }
+
+  get Target() {
+    return {
+      name: _target.name,
+      health: _target.health,
+      attacks: _target.attacks,
+      items: _target.items,
+      hits: _target.hits,
+    }
+  }
+
+  addItemToTarget(itemIndex) {
+    // you will need to write the logic to check if the item is already in the target's items before you add it again
+    let targetItem = _items[itemIndex]
+    _target.items.push(targetItem)
+  }
+
+  attackTarget(attackName) {
+    // you will need to write the logic to account for items your target may have
+    // you will also need to write the logic to check whether the target is alive or dead
+    let attackDamage = _target.attacks[attackName]
+    _target.health -= attackDamage
+    _target.hits++
+  }
+
+  //any other methods you might want on your service
+}
+```
+
+* Notice we write `import Target from '../models/Target.js' ` to utilize the exported code from Target.js within the GameServe.js file
+
+#### Step 3 - Controller
+
+The next step is to put together our controller. The controller acts as the middleman between our service and the DOM. We will instantiate our service within the game-controller.js file to allow access to all of the GameService's properties and methods.
+
+1. Inside of the components folder create a new file called game-controller.js
+2. Create a new class to act as your controller and title it "GameController"
+
+Your game-controller.js should look something like this:
+
+```javascript
+import GameService from './game-service.js'
+
+let _gameService = new GameService()
+
+function draw() {
+  let target = _gameService.Target
+  let template = `
+  <div class="card">
+      <h2>${target.name}</h2>
+      <h4>Health: ${target.health}</h4>
+  </div>
+  `
+  //you will need to modify your template string to be whatever you want and then set it as the innerHTML 
+  //of an element on the DOM
+}
+
+//any other private functions you may want
+
+export default class GameController {
+  constructor() { }
+
+  addItemToTarget(itemIndex) {
+    _gameService.addItemToTarget(itemIndex)
+  }
+  
+  attackTarget(attackName) {
+    _gameService.attackTarget(attackName)
+    draw()
+  }
+
+  //any other public methods you may want
+}
+```
+
+#### Step 3 - The Entry Point
+
+Now that we've written all of these scripts, we need one script that will be the single entry point into all of our javascript files from the DOM. We will call it main.js
+
+1. At the root level of your slap game create a folder called app
+2. Inside of the app folder create a new javascript file called main.js
+  * Make sure you've moved both your components and models folder into the app folder
+  
+Your main.js should look like this: 
+
+```javascript
+import GameController from './components/game-controller.js'
+
+class App {
+  constructor() {
+    this.controllers = {
+      gameController: new GameController()
+    }
+  }
+}
+
+window.app = new App()
+```
+
+* __Note__: Your onclick's will now have to drill down to the GameController, e.g. `onclick="app.controllers.gameController.attack('slap')"`
 
 ## Requirements
  - Visualization: 
