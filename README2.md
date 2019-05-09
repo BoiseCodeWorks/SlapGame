@@ -74,7 +74,7 @@ var fire = {
 ### Step 3 - Create the items
 - Since our game will have multiple items, we need to find an easy way to access them. 
  We can use an array to store a collection of objects. However, arrays are not always the easiest to use, because they require us
- to loop over the entire collection when we are looking for a specific item. What if we instead, create an object that uses the name of the item as a property (for more on this topic, review the <a href="http://bcw-cheatsheets.herokuapp.com/cheatsheets/1">dictionaries</a> cheetsheet)?
+ to loop over the entire collection when we are looking for a specific item. What if we instead, create an object that uses the name of the item as a property (for more on this topic, review the <a href="http://bcw-cheatsheets.herokuapp.com/cheatsheets/1">dictionaries</a> cheat sheet)?
 1. Create an object called items.
 2. Following the example below, add 2 more items.
 
@@ -101,7 +101,7 @@ var ryu = {
   items:[]
 ``` 
 
-2. Keep in mind that the \[items] object that is global, is completly different than the \[items] array on the target.
+2. Keep in mind that the \[items] object that is global, is completely different than the \[items] array on the target.
 3. Now write a function (something like giveFire()) that will push an item from the global items object into the items array on the target.
  
 ### Step 5 - REDUCE THE DAMAGE!... almost
@@ -142,12 +142,12 @@ target.health -= damage + addMods();
  	- Items affect the current health or the damage rate
 
 ### Bonus Challenges 
-- Draw items to screen dynamically; can you write a function that will itterate over your items list and create a button for each one?
+- Draw items to screen dynamically; can you write a function that will iterate over your items list and create a button for each one?
 - K.O. Notification: Make a notification apear on the screen once the target's health reaches 0
 - Damage Indicator: Most games have not only a number but a health bar, how could you create one for your target (checkout Bootstraps Progress Bars)
-- Hit Animation: How could you make something happen everytime you clicked to hit your target? A pop up animation or maybe the picture moves?
+- Hit Animation: How could you make something happen every time you clicked to hit your target? A pop up animation or maybe the picture moves?
 - Reset: Your user should have a way to start the game over without having to refresh the page.
 - Limit items being used: How could you only allow so many items to be used at a time to prevent users stacking up 100 modifiers
 - Randomize damage: Maybe each hit does a damage within a certain range instead of a static number?
-- Limit each items number of uses: Should each shield be permenant or does it break after so many hits?
+- Limit each items number of uses: Should each shield be permanent or does it break after so many hits?
 - GUI for what items are active: How does the user know what modifiers are active and their total affect?
