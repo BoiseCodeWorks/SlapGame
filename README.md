@@ -1,7 +1,18 @@
 ## The Slap Game - Part 1
 
-#### Objective:
-Students will use javascript in order to interact with the DOM to create a dynamic webpage.
+<div class="text-center">
+    <img class="img-responsive" src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80"/>
+</div>
+
+<hr>
+
+## Goals
+
+In this first checkpoint students will demonstrate their understanding of working with the DOM to and dynamically rendering data to the page. They will be responsible for writing functions to handle input and styling the page utilizing Bootstrap best practices to design the page.
+
+<hr>
+
+## The Setup
 
 ### Step 1 - GIT - Project Initialization
 
@@ -40,7 +51,7 @@ Students will use javascript in order to interact with the DOM to create a dynam
 ### Step 5 - JS - Update the user interface
 
 1. We are now going to add a function to manipulate the user interface by using the DOM API.
-  - To do this, javascript is required.
+  - To do this, JavaScript is required.
   - You should know by now that selectors are required in order to select specific elements inside the DOM.
   - In this case, we will use the infamous "document.getElementById("WHATEVER-ID")";
 2. Add a function called update(). This will be responsible for updating the user interface whenever a value changes.
@@ -52,7 +63,7 @@ Students will use javascript in order to interact with the DOM to create a dynam
 
 ### Step 6 - HTML - Add the other buttons and stuff...
 
-1. Add 2 more buttons Punch, and Kick to the UI, as well as their respective functions in javascript.
+1. Add 2 more buttons Punch, and Kick to the UI, as well as their respective functions in JavaScript.
   - Have the punch function decrease the target's health by 5, and kick by 10.
   - Don't forget to call update inside each function.
 2. Declare 2 more variables 'name', and 'hits' where you initialized the health variable. 
@@ -75,5 +86,3 @@ Students will use javascript in order to interact with the DOM to create a dynam
       - Current Health and Health Updates are visible while game is being played
   - Functionality: 
       - 3 Buttons to affect status in varying amounts
-
-
