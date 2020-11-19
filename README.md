@@ -8,7 +8,7 @@
 
 ## Goals
 
-In this first checkpoint students will demonstrate their understanding of working with the DOM to and dynamically rendering data to the page. They will be responsible for writing functions to handle input and styling the page utilizing Bootstrap best practices to design the page.
+In this challenge students will demonstrate their understanding of working with the DOM to and dynamically rendering data to the page. They will be responsible for writing functions to handle input and styling the page utilizing Bootstrap best practices to design the page.
 
 <hr>
 
@@ -80,9 +80,3 @@ In this first checkpoint students will demonstrate their understanding of workin
   - Click the punch button, you should see the target health drop to 94 and hit count to 2.
   - Finally click the Kick button, you should see the target health drop to 84 and hit count to 3.
   - Keep pressing buttons... What happens when the target has been hit for over 100 hit points? Why does this happen?
-
-### Requirements   
-  - Visualization: 
-      - Current Health and Health Updates are visible while game is being played
-  - Functionality: 
-      - 3 Buttons to affect status in varying amounts
